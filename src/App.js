@@ -28,4 +28,4 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
 
-// Пишем интернет-магазин на ReactJS + Redux #1 | 1:44:37
+// Пишем интернет-магазин на ReactJS + Redux #2 | 52:14
