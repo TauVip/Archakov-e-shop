@@ -1,18 +1,26 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { setBooks } from './actions/books'
-import books from './books.json'
+import axios from 'axios'
 
 class App extends Component {
+  componentWillMount() {
+    const { setBooks } = this.props
+    axios.get('/books.json').then(({ data }) => setBooks(data))
+  }
+
   render() {
-    // const { books } = this.props
+    const { books } = this.props
+
     return (
       <ul>
-        {books.map(book => (
-          <li>
-            <b>{book.title}</b> - {book.author}
-          </li>
-        ))}
+        {!books
+          ? 'Загрузка'
+          : books.map(book => (
+              <li key={book.id}>
+                <b>{book.title}</b> - {book.author}
+              </li>
+            ))}
       </ul>
     )
   }
@@ -28,4 +36,4 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
 
-// Пишем интернет-магазин на ReactJS + Redux #2 | 52:14
+// Пишем интернет-магазин на ReactJS + Redux #2 | 1:03:07
