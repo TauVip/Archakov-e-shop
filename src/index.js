@@ -15,4 +15,4 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-// Пишем интернет-магазин на ReactJS + Redux #3 | 40:07
+// Пишем интернет-магазин на ReactJS + Redux #4 (Завершение) | 33:27
